@@ -1,0 +1,4 @@
+les contenus possibles du fichier fich1:
+-45123hi
+-45hi123
+
