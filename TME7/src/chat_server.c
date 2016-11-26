@@ -59,11 +59,14 @@ if(indx_c < MAX_USERS){
 
 void deconnexion(char* id_c){
 printf("> deconnexion : %s\n",id_c);
-int i,y;
-	for(i=0;i<indx_c;i++){
+int i,y,n = indx_c;
+	for(i=0;i<n;i++){
 		if(strcmp(clients[i],id_c) == 0){
-			for(y=i;y<indx_c;y++)
+			for(y=i;y<n;y++){
 				clients[y] = clients[y+1];
+				clt_seg[y] = clt_seg[y+1];
+				indx_c--;
+			}
 				break;
 		}
 	}
@@ -102,7 +105,7 @@ int main(int argc, char** argv){
 	struct sigaction action;
 	id = argv[1];
 	init_m();
-	printf("----Server------\n");
+	printf("------------Server--------------\n");
 	sigemptyset(&sig_proc);
 	/* changer le traitement */
 	action.sa_mask=sig_proc;
