@@ -1,0 +1,14 @@
+# nombre des threads creer avec prelier thread appelant egal à 1 et max = 3 c'est : 9
+# dessin de l'arbre
+---------*-------------
+-----/-------\----------
+----*---------*-------
+---/-|-\----/-|-\--------
+--*-*-*----*--*--*----
+#
+la formule :
+si on suppose que :
+f : le premier niveau
+lvl : dernier niveau
+donc le nombre des thrads creer est :
+la somme de i! (factoriel de i) tels que i allant de f à lvl
