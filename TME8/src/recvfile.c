@@ -67,14 +67,12 @@ int main(int argc,char **argv){
     
     while(read(scom, &msg, 1024) > 0){
 			write(fd,msg,strlen(msg));	
-			shutdown(scom, 2);
-			close(scom);
-			exit(0);
 	}
 }
 }
-
-	
+close(fd);
+shutdown(scom, 2);
+close(scom);	
 close(sc);
 return EXIT_SUCCESS;
 }
